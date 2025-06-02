@@ -192,8 +192,10 @@
         text-transform: uppercase;
     }
 
-    &--break {
-        word-break: break-word;
+    @media (max-width: 370px) {
+        &--break {
+            word-break: break-word;
+        }
     }
 }
 
