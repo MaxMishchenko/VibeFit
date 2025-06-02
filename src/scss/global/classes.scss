@@ -191,12 +191,6 @@
     &--uppercase {
         text-transform: uppercase;
     }
-
-    @media (max-width: 370px) {
-        &--break {
-            word-break: break-word;
-        }
-    }
 }
 
 .position {
