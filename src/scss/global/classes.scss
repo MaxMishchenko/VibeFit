@@ -1,0 +1,230 @@
+.flex {
+    display: flex;
+
+    &--column {
+        flex-direction: column;
+    }
+}
+
+.items {
+    &--center {
+        align-items: center;
+    }
+
+    &--end {
+        align-items: end;
+    }
+}
+
+.justify {
+    &--center {
+        justify-content: center;
+    }
+
+    &--end {
+        justify-content: end;
+    }
+}
+
+.self {
+    &--end {
+        align-self: end;
+    }
+}
+
+.gap {
+    &--8 {
+        gap: 8px;
+    }
+
+    &--16 {
+        gap: 16px;
+    }
+
+    &--18 {
+        gap: 18px;
+    }
+
+    &--40 {
+        gap: 40px;
+    }
+}
+
+.grid {
+    display: grid;
+}
+
+.p {
+    &l {
+        &--8 {
+            padding-left: 8px;
+        }
+
+        &--16 {
+            padding-left: 16px;
+        }
+    }
+
+    &r {
+        &--8 {
+            padding-right: 8px;
+        }
+
+        &--16 {
+            padding-right: 16px;
+        }
+    }
+
+    &t {
+        &--8 {
+            padding-top: 8px;
+        }
+
+        &--12 {
+            padding-top: 12px;
+        }
+    }
+
+    &b {
+        &--8 {
+            padding-bottom: 8px;
+        }
+
+        &--12 {
+            padding-bottom: 12px;
+        }
+
+        &--18 {
+            padding-bottom: 18px;
+        }
+    }
+}
+
+.m {
+    &--auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.color {
+    &--white {
+        color: var(--color--white);
+    }
+
+    &--black {
+        color: var(--color--black);
+    }
+
+    &--blue {
+        color: var(--color--blue);
+    }
+}
+
+.bg {
+    &--black {
+        background-color: var(--color--black);
+    }
+
+    &--white {
+        background-color: var(--color--white);
+    }
+
+    &--mint {
+        background-color: var(--color--mint);
+    }
+
+    &--alpha {
+        &-white {
+            background-color: var(--color--alpha-white);
+        }
+    }
+}
+
+.br {
+    &--16 {
+        border-radius: 16px;
+    }
+
+    &--36 {
+        border-radius: 36px;
+    }
+}
+
+.font {
+    &--normal {
+        font-weight: 400;
+    }
+
+    &--medium {
+        font-weight: 500;
+    }
+
+    &--bold {
+        font-weight: 700;
+    }
+
+    &--primary {
+        font-family: 'RussoOne';
+    }
+
+    &--secondary {
+        font-family: 'UbuntuSans';
+    }
+
+    &--size {
+        &-15 {
+            @include font(15);
+        }
+
+        &-18 {
+            @include font(18);
+        }
+
+        &-32 {
+            @include font(32);
+        }
+    }
+}
+
+.text {
+    &--uppercase {
+        text-transform: uppercase;
+    }
+
+    &--break {
+        word-break: break-word;
+    }
+}
+
+.position {
+    &--fixed {
+        position: fixed;
+    }
+
+    &--absolute {
+        position: absolute;
+    }
+
+    &--relative {
+        position: relative;
+    }
+}
+
+.btn {
+    &--small {
+        width: 163px;
+        height: 42px;
+
+        @media (min-width: 768px) {
+            width: 175px;
+            height: 52px;
+            @include font(20);
+        }
+    }
+
+    &--transparent {
+        background-color: transparent;
+        border: 1px solid var(--color--white);
+    }
+}
