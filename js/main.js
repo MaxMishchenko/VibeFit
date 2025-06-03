@@ -1,1 +1,1 @@
-$(document).ready((function(){}));
+$(document).ready((function(){$("#burger-ctr").on("click",(function(){$(this).toggleClass("active")}));const n=$("#header");function o(o=!0){const t=$(window).scrollTop(),s=Math.max(0,16-t);o||n.css("transition","none"),n.css("top",s+"px"),o||requestAnimationFrame((()=>{n.css("transition","top 0.1s ease")}))}o(!1),$(window).on("scroll",(function(){o(!0)}))}));

@@ -1,3 +1,10 @@
 .header {
     z-index: 999;
+    background-color: #000000bf;
+    height: 65px;
+    left: 0;
+    right: 0;
+    top: 16px;
+    backdrop-filter: blur(10px);
+    transition: top .1s ease;
 }
