@@ -6,7 +6,7 @@
     }
 }
 
-.items {
+.align {
     &--center {
         align-items: center;
     }
@@ -49,8 +49,16 @@
         gap: 18px;
     }
 
+    &--32 {
+        gap: 32px;
+    }
+
     &--40 {
         gap: 40px;
+    }
+
+    &--64 {
+        gap: 64px;
     }
 }
 
@@ -138,6 +146,10 @@
         background-color: var(--color--mint);
     }
 
+    &--grey {
+        background-color: var(--color--grey);
+    }
+
     &--alpha {
         &-white {
             background-color: var(--color--alpha-white);
@@ -183,6 +195,14 @@
 
         &-18 {
             @include font(18);
+        }
+
+        &-20 {
+            @include font(20);
+        }
+
+        &-28 {
+            @include font(28);
         }
 
         &-32 {

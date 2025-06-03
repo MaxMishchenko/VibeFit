@@ -6,60 +6,29 @@
     font-smooth: always;
 }
 
+body {
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        background-color: #0000007F;
+        z-index: -1;
+        height: 100dvh;
+        opacity: 0;
+        transition: opacity .6s ease-in-out;
+    }
 
+    &.lock {
+        overflow: hidden;
+        pointer-events: none;
 
-#burger-ctr {
-    width: 100px;
-    margin: 0 auto;
-    height: 100px;
-    padding: 12.5px 0;
-}
-
-.bar {
-    height: 15px;
-    background: white;
-    margin-bottom: 15px;
-    border-radius: 50px;
-    position: relative;
-    transition: .4s all ease;
-}
-
-.bar.bottom {
-    margin-bottom: 0;
-}
-
-.head {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    top: 50%;
-    margin-top: -10px;
-    left: 50%;
-    margin-left: -10px;
-    transform: scale(0);
-}
-
-#burger-ctr.active .head {
-    top: 0;
-    margin-top: 0;
-    transform: scale(1);
-    transition: .4s all ease .2s;
-}
-
-#burger-ctr.active {
-    filter: url("#goo");
-}
-
-#burger-ctr.active .bar.center {
-    transform: scale(0);
-}
-
-#burger-ctr.active .bar.top {
-    transform: translateX(0) translateY(30px) rotate(45deg);
-}
-
-#burger-ctr.active .bar.bottom {
-    transform: translateX(0) translateY(-30px) rotate(-45deg);
+        &:after {
+            opacity: 1;
+            pointer-events: none;
+            z-index: 997;
+        }
+    }
 }
