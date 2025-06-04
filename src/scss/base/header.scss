@@ -6,7 +6,6 @@
     left: 0;
     right: 0;
     top: 16px;
-    transition: all .4s ease-in-out;
     will-change: backdrop-filter;
 
     &.float {
@@ -119,10 +118,9 @@
     &__wrapper {
         z-index: 999;
         height: inherit;
-        transition: background-color .4s ease-in-out;
+        transition: background-color .4s ease;
 
         &.active {
-            background-color: var(--color--grey);
             pointer-events: auto;
         }
 
