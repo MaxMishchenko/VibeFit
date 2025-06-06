@@ -34,6 +34,14 @@ $(document).ready(function () {
     }
 
     // ===== ФУНКЦІЯ: Перемикання меню ===== //
+    function unlockBodyWithDelay() {
+        $body.addClass('lock-removing');
+
+        setTimeout(() => {
+            $body.removeClass('lock lock-removing');
+        }, 400);
+    }
+
     function toggleMenu() {
         const isExpanded = $burger.attr('aria-expanded') === 'true';
 
@@ -41,7 +49,13 @@ $(document).ready(function () {
         $menu.toggleClass('active');
         $burger.toggleClass('active');
         $headerWrapper.toggleClass('active');
-        $body.toggleClass('lock');
+
+        if ($body.hasClass('lock')) {
+            unlockBodyWithDelay();
+        } else {
+            $body.removeClass('lock-removing');
+            $body.addClass('lock');
+        }
     }
 
     $('#mobileMenu a').click(function () {
@@ -53,7 +67,6 @@ $(document).ready(function () {
     $(window).on('resize', function () {
         if (window.innerWidth >= 768 && $body.hasClass('lock') && !menuToggled) {
             toggleMenu();
-
             menuToggled = true;
         }
     });
