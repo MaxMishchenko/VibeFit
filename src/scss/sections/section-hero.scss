@@ -55,76 +55,43 @@
         }
 
         &__btn {
-            &-filled {
-                border: 1px solid var(--color--mint);
-                position: relative;
-                transition: all .3s;
+            transition: all .2s;
+            position: relative;
+            overflow: hidden;
 
-                &:before,
-                &:after {
-                    content: '';
-                    position: absolute;
-                    z-index: -1;
-                    border-radius: 36px;
-                    transition: all .3s;
-                }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                transition: width .4s;
+                z-index: 0;
+            }
+
+            &:hover {
+                color: var(--color--black);
 
                 &:before {
-                    height: 100%;
-                    left: 0;
-                    top: 0;
                     width: 100%;
                 }
+            }
 
-                &:after {
-                    background-color: var(--color--mint);
-                    height: 100%;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                }
+            & > * {
+                position: relative;
+                z-index: 1;
+            }
 
-                &:hover {
-                    color: var(--color--white);
-                    border: 1px solid var(--color--white);
-                    background-color: transparent;
-
-                    &:after {
-                        height: 0;
-                        left: 50%;
-                        top: 50%;
-                        width: 0;
-                    }
+            &-filled {
+                &::before {
+                    background-color: var(--color--blue);
                 }
             }
 
             &-clear {
-                position: relative;
-                transition: all .3s;
-
-                &:after {
-                    background-color: var(--color--mint);
-                    content: '';
-                    position: absolute;
-                    z-index: -1;
-                    height: 0;
-                    left: 50%;
-                    top: 50%;
-                    width: 0;
-                    border-radius: 36px;
-                    transition: all .3s;
-                }
-
-                &:hover {
-                    color: var(--color--black);
-                    border: 1px solid var(--color--mint);
-
-                    &:after {
-                        height: calc(100% + 1px);
-                        left: -1px;
-                        top: -1px;
-                        width: calc(100% + 2px);
-                    }
+                &::before {
+                    background-color: var(--color--white);
                 }
             }
         }

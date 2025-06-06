@@ -16,13 +16,16 @@
     @media (min-width: 768px) {
         height: 80px;
 
-        &.float {
-            background-color: #000000e0;
-        }
-
         &__logo {
             width: 84px;
             height: 66px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &.float {
+            background-color: #1717174f;
+            backdrop-filter: blur(20px);
         }
     }
 
@@ -126,10 +129,6 @@
 
         @media (min-width: 768px) {
             padding: 0 40px;
-
-            &:hover {
-                background-color: var(--color--black);
-            }
         }
 
         @media (min-width: 1024px) {
