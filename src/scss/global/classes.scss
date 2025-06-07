@@ -4,6 +4,10 @@
     &--column {
         flex-direction: column;
     }
+
+    &--no-shrink {
+        flex-shrink: 0;
+    }
 }
 
 .align {
@@ -99,6 +103,10 @@
         &--16 {
             padding-top: 16px;
         }
+
+        &--64 {
+            padding-top: 64px;
+        }
     }
 
     &b {
@@ -170,6 +178,10 @@
 }
 
 .br {
+    &--circle {
+        border-radius: 50%;
+    }
+
     &--16 {
         border-radius: 16px;
     }
