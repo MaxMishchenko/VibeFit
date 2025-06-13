@@ -1,24 +1,24 @@
 $(document).ready(function () {
+    const $window = $(window);
+    const $body = $('body');
     const $burger = $('#burger');
     const $menu = $('#mobileMenu');
     const $header = $('#header');
     const $headerWrapper = $('#headerWrapper');
-    const $body = $('body');
-    const $window = $(window);
+    const $menuLinks = $menu.find('a');
+    const $accordionItems = $('.faq__list-item');
+    const $allIcons = $('.faq__list-icon-wrapper .faq__list-icon');
+    const $allTexts = $('[data-text]');
 
     const MAX_HEADER_TOP = 16;
     const HEADER_TRANSITION = 'top .2s ease-in-out';
 
-    // ===== ФУНКЦІЯ: Оновлення положення header ===== //
+    // --- Оновлення положення header --- //
     function updateHeaderTop(applyTransition = true) {
         const scrollTop = $window.scrollTop();
         const newTop = Math.max(0, MAX_HEADER_TOP - scrollTop);
 
-        if (newTop === 0) {
-            $header.addClass('float');
-        } else {
-            $header.removeClass('float');
-        }
+        $header.toggleClass('float', newTop === 0);
 
         if (!applyTransition) {
             $header.css('transition', 'none');
@@ -33,7 +33,7 @@ $(document).ready(function () {
         }
     }
 
-    // ===== ФУНКЦІЯ: Перемикання меню ===== //
+    // --- Розблокування body з затримкою --- //
     function unlockBodyWithDelay() {
         $body.addClass('lock-removing');
 
@@ -42,6 +42,7 @@ $(document).ready(function () {
         }, 400);
     }
 
+    // --- Перемикання меню --- //
     function toggleMenu() {
         const isExpanded = $burger.attr('aria-expanded') === 'true';
 
@@ -53,30 +54,57 @@ $(document).ready(function () {
         if ($body.hasClass('lock')) {
             unlockBodyWithDelay();
         } else {
-            $body.removeClass('lock-removing');
-            $body.addClass('lock');
+            $body.removeClass('lock-removing').addClass('lock');
         }
     }
 
-    $('#mobileMenu a').click(function () {
-        toggleMenu();
-    });
+    // --- Клік по бургеру --- //
+    $burger.on('click', toggleMenu);
 
+    // --- Клік по посиланнях меню --- //
+    $menuLinks.on('click', toggleMenu);
+
+    // --- Зміна розміру вікна --- //
     let menuToggled = false;
-
-    $(window).on('resize', function () {
+    $window.on('resize', function () {
         if (window.innerWidth >= 768 && $body.hasClass('lock') && !menuToggled) {
             toggleMenu();
             menuToggled = true;
         }
     });
 
-    // ===== ІНІЦІАЛІЗАЦІЯ ===== //
-    updateHeaderTop(false);
-
+    // --- Скрол для оновлення header --- //
     $window.on('scroll', function () {
         updateHeaderTop(true);
     });
 
-    $burger.on('click', toggleMenu);
+    // --- Клік по акордіону --- //
+    $accordionItems.on('click', function () {
+        const $currentItem = $(this);
+        const $currentIcon = $currentItem.find('.faq__list-icon-wrapper .faq__list-icon');
+        const $currentText = $currentItem.find('[data-text]');
+        const isOpen = $currentIcon.hasClass('open');
+
+        if (isOpen) {
+            $currentIcon.removeClass('open');
+            $currentText.stop(true, true).animate({ opacity: 0 }, 150, function () {
+                $(this).slideUp(200);
+            });
+        } else {
+            $allIcons.removeClass('open');
+            $allTexts.stop(true, true).animate({ opacity: 0 }, 150, function () {
+                $(this).slideUp(200);
+            });
+
+            $currentIcon.addClass('open');
+            $currentText
+                .stop(true, true)
+                .css({ display: 'none', opacity: 0 })
+                .slideDown(200)
+                .animate({ opacity: 1 }, 400);
+        }
+    });
+
+    // ===== ІНІЦІАЛІЗАЦІЯ ===== //
+    updateHeaderTop(false);
 });
