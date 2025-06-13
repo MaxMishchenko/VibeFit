@@ -87,6 +87,10 @@
         &--16 {
             padding-left: 16px;
         }
+
+        &--24 {
+            padding-left: 24px;
+        }
     }
 
     &r {
@@ -96,6 +100,10 @@
 
         &--16 {
             padding-right: 16px;
+        }
+
+        &--24 {
+            padding-right: 24px;
         }
     }
 
@@ -110,6 +118,10 @@
 
         &--16 {
             padding-top: 16px;
+        }
+
+        &--48 {
+            padding-top: 48px;
         }
 
         &--64 {
@@ -130,6 +142,10 @@
             padding-bottom: 18px;
         }
 
+        &--48 {
+            padding-bottom: 48px;
+        }
+
         &--64 {
             padding-bottom: 64px;
         }
@@ -140,6 +156,12 @@
     &--auto {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    &b {
+        &--16 {
+            margin-bottom: 16px;
+        }
     }
 }
 
