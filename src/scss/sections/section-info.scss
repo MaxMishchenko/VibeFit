@@ -3,6 +3,16 @@
         padding: 64px 40px;
     }
 
+    @media (min-width: 1024px) {
+        &__wrapper {
+            gap: 5px;
+        }
+
+        &__title {
+            @include font(36);
+        }
+    }
+
     @media (min-width: 1440px) {
         padding: 80px 120px;
 

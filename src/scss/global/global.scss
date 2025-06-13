@@ -6,36 +6,6 @@
     font-smooth: always;
 }
 
-/*
-body {
-    &:after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: block;
-        background-color: #0000007F;
-        z-index: -1;
-        height: 100dvh;
-        opacity: 0;
-        transition: opacity .6s ease-in-out;
-    }
-
-    &.lock {
-        overflow: hidden;
-        pointer-events: none;
-
-        &:after {
-            opacity: 1;
-            pointer-events: none;
-            z-index: 997;
-        }
-    }
-}
-*/
-
-
 body {
     &:after {
         content: '';

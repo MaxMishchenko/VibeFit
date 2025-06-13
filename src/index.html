@@ -6,12 +6,15 @@
 </head>
 <title>VibeFit — персональний фітнес-чат-бот для тренувань і харчування</title>
 <body>
+@include('partials/global/sprite.html')
 @include('partials/global/header.html')
 
 <main>
     @include('partials/main/sections/section-hero.html')
     @include('partials/main/sections/section-companion.html')
     @include('partials/main/sections/section-info.html')
+    @include('partials/main/sections/section-audience.html')
+    @include('partials/main/sections/section-comparison.html')
 </main>
 
 <!--@include('partials/global/footer.html')
@@ -19,7 +22,7 @@
 @include('partials/global/float-button.html')-->
 
 <script defer src="./js/jquery.js"></script>
-<script defer src="./js/main.js?v=lxhf"></script>
+<script defer src="./js/main.js?v=1.1"></script>
 <!--<script type="application/ld+json">
     {
         "@context": "https://schema.org",
