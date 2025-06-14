@@ -105,6 +105,22 @@ $(document).ready(function () {
         }
     });
 
+    // --- Плавний скрол до якорів --- //
+    $('a[href^="#"]').on('click', function (event) {
+        event.preventDefault();
+
+        const targetId = $(this).attr('href');
+        const targetElement = $(targetId);
+
+        if (targetElement.length) {
+            const targetOffset = targetElement.offset().top - 70;
+
+            $('html, body').animate({
+                scrollTop: targetOffset
+            }, 600);
+        }
+    });
+
     // ===== ІНІЦІАЛІЗАЦІЯ ===== //
     updateHeaderTop(false);
 });
