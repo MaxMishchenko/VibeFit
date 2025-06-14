@@ -3,7 +3,7 @@
 <head>
     @include('partials/global/head.html')
 </head>
-<title>VibeFit — персональний фітнес-чат-бот для тренувань і харчування</title>
+<title>VibeFit - персональний фітнес-чат-бот</title>
 <body>
 @include('partials/global/sprite.html')
 @include('partials/global/header.html')
@@ -25,36 +25,134 @@
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "VibeFit",
-        "url": "https://maxmishchenko.github.io/VibeFit/",
-        "description": "VibeFit — фітнес-чат-бот, який підбирає персональні тренування та раціон, допомагає орендувати тренажери і підтримує здоровий спосіб життя без спортзалу. Ідеально для занять вдома або на ходу.",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "iOS, Android, Web",
-        "sameAs": [
-            "https://t.me/vibefit_bot"
-        ],
-        "offers": [
+        "@graph": [
             {
-                "@type": "Offer",
-                "name": "Пробний",
-                "description": "Познайомся з VibeFit легко! Ідеальний варіант, щоб протестувати функціонал і стиль.",
-                "price": "80.00",
-                "priceCurrency": "USD"
+                "@type": "WebSite",
+                "@id": "https://maxmishchenko.github.io/VibeFit/",
+                "url": "https://maxmishchenko.github.io/VibeFit/",
+                "name": "VibeFit",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://maxmishchenko.github.io/VibeFit/?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
             },
             {
-                "@type": "Offer",
-                "name": "Базовий",
-                "description": "Твій персональний фітнес-помічник вдома. Підійде для тих, хто хоче результатів без спортзалу.",
-                "price": "100.00",
-                "priceCurrency": "USD"
+                "@type": "WebPage",
+                "@id": "https://maxmishchenko.github.io/VibeFit/",
+                "url": "https://maxmishchenko.github.io/VibeFit/",
+                "name": "VibeFit — персональні фітнес-плани через Telegram",
+                "isPartOf": {
+                    "@id": "https://maxmishchenko.github.io/VibeFit/"
+                }
             },
             {
-                "@type": "Offer",
-                "name": "PRO",
-                "description": "Максимум підтримки + власний тренажер вдома. Комплексне рішення для тих, хто хоче результату з комфортом.",
-                "price": "120.00",
-                "priceCurrency": "USD"
+                "@type": "WebApplication",
+                "name": "VibeFit",
+                "url": "https://maxmishchenko.github.io/VibeFit/",
+                "description": "VibeFit — фітнес-чат-бот, який підбирає тренування та раціон у Telegram.",
+                "applicationCategory": "HealthApplication",
+                "operatingSystem": "iOS, Android, Web",
+                "sameAs": ["https://t.me/vibefit_bot"]
+            },
+            {
+                "@type": "Product",
+                "name": "VibeFit — фітнес-бот",
+                "image": "https://maxmishchenko.github.io/VibeFit/img/og/og_vibefit_1200_675.png",
+                "description": "Фітнес-бот із планами тренувань і раціоном у Telegram",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "VibeFit"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "5",
+                    "reviewCount": "350"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": {
+                            "@type": "Person",
+                            "name": "Олена"
+                        },
+                        "reviewRating": {
+                            "@type": "Rating",
+                            "ratingValue": "5",
+                            "bestRating": "5"
+                        },
+                        "reviewBody": "Супер бот! Дуже зручно та ефективно!"
+                    }
+                ],
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Пробний",
+                        "url": "https://maxmishchenko.github.io/VibeFit/#pricing",
+                        "description": "Познайомся з VibeFit легко!",
+                        "priceCurrency": "USD",
+                        "price": "80.00",
+                        "availability": "https://schema.org/InStock",
+                        "itemCondition": "https://schema.org/NewCondition"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Базовий",
+                        "url": "https://maxmishchenko.github.io/VibeFit/#pricing",
+                        "description": "Твій персональний фітнес-помічник.",
+                        "priceCurrency": "USD",
+                        "price": "100.00",
+                        "availability": "https://schema.org/InStock",
+                        "itemCondition": "https://schema.org/NewCondition"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "PRO",
+                        "url": "https://maxmishchenko.github.io/VibeFit/#pricing",
+                        "description": "Максимум підтримки + тренажер.",
+                        "priceCurrency": "USD",
+                        "price": "120.00",
+                        "availability": "https://schema.org/InStock",
+                        "itemCondition": "https://schema.org/NewCondition"
+                    }
+                ]
+            },
+            {
+                "@type": "ImageObject",
+                "contentUrl": "https://maxmishchenko.github.io/VibeFit/img/og/og_vibefit_1200_675.png",
+                "creator": {
+                    "@type": "Organization",
+                    "name": "VibeFit"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "VibeFit Головна",
+                        "item": "https://maxmishchenko.github.io/VibeFit/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Як це працює?",
+                        "item": "https://maxmishchenko.github.io/VibeFit/#sectionInfo"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "FAQ",
+                        "item": "https://maxmishchenko.github.io/VibeFit/#sectionFAQ"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "Тарифи",
+                        "item": "https://maxmishchenko.github.io/VibeFit/#sectionPrice"
+                    }
+                ]
             }
         ]
     }
