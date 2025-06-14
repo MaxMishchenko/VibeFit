@@ -22,22 +22,47 @@
 @include('partials/global/footer.html')
 
 <script defer src="./js/jquery.js"></script>
-<script defer src="./js/main.js?v=1.1"></script>
-<!--<script type="application/ld+json">
+<script defer src="./js/main.js?v=1.2"></script>
+<script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "VibeFit",
-        "url": "https://yourdomain.com",
-        "description": "Фітнес-чат-бот, що підбирає персональні тренування, харчування та орендує тренажери.",
+        "url": "https://maxmishchenko.github.io/VibeFit/",
+        "description": "VibeFit — фітнес-чат-бот, який підбирає персональні тренування та раціон, допомагає орендувати тренажери і підтримує здоровий спосіб життя без спортзалу. Ідеально для занять вдома або на ходу.",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "iOS, Android, Web",
-        "offers": {
-            "@type": "Offer",
-            "price": "0.00",
-            "priceCurrency": "USD"
-        }
+        "sameAs": [
+            "https://t.me/vibefit_bot"
+        ],
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Пробний",
+                "description": "Познайомся з VibeFit легко! Ідеальний варіант, щоб протестувати функціонал і стиль.",
+                "price": "80.00",
+                "priceCurrency": "USD"
+            },
+            {
+                "@type": "Offer",
+                "name": "Базовий",
+                "description": "Твій персональний фітнес-помічник вдома. Підійде для тих, хто хоче результатів без спортзалу.",
+                "price": "100.00",
+                "priceCurrency": "USD"
+            },
+            {
+                "@type": "Offer",
+                "name": "PRO",
+                "description": "Максимум підтримки + власний тренажер вдома. Комплексне рішення для тих, хто хоче результату з комфортом.",
+                "price": "120.00",
+                "priceCurrency": "USD"
+            }
+        ]
     }
-</script>-->
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </body>
 </html>

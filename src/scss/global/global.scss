@@ -7,6 +7,8 @@
 }
 
 body {
+    overflow-x: hidden;
+
     &:after {
         content: '';
         position: fixed;
