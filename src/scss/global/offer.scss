@@ -1,0 +1,52 @@
+.offer {
+    padding-top: 117px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        padding: 175px 40px 48px;
+
+        &__text {
+            &-item {
+                max-width: 890px;
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &__title {
+            @include font(36);
+        }
+    }
+
+    @media (min-width: 1440px) {
+        padding: 176px 120px 48px;
+        gap: 48px;
+        max-width: 1680px;
+        margin: 0 auto;
+
+        &__title {
+            @include font(56);
+        }
+
+        &__subtitle {
+            @include font(24);
+        }
+
+        &__text {
+            @include font(18);
+            gap: 16px;
+
+            &-item {
+                max-width: 1070px;
+            }
+        }
+
+        &__item {
+            gap: 16px;
+        }
+
+        &__cred {
+            gap: 16px;
+        }
+    }
+}
