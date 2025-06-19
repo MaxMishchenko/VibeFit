@@ -122,5 +122,18 @@ $(document).ready(function () {
     });
 
     // ===== ІНІЦІАЛІЗАЦІЯ ===== //
+    $(window).on('load', function () {
+        const hash = window.location.hash;
+
+        if (hash && $(hash).length) {
+            const targetElement = $(hash);
+            const targetOffset = targetElement.offset().top - 70;
+
+            $('html, body').animate({
+                scrollTop: targetOffset
+            }, 600);
+        }
+    });
+
     updateHeaderTop(false);
 });
