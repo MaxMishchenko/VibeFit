@@ -1,3 +1,19 @@
+$(window).on('load', function () {
+    const hash = window.location.hash;
+
+    console.log('init');
+
+    if (hash && $(hash).length) {
+        const targetElement = $(hash);
+        const targetOffset = targetElement.offset().top - 70;
+
+        $('html, body').animate({
+            scrollTop: targetOffset
+        }, 600);
+
+        console.log('done');
+    }
+});
 $(document).ready(function () {
     const $window = $(window);
     const $body = $('body');
@@ -122,18 +138,5 @@ $(document).ready(function () {
     });
 
     // ===== ІНІЦІАЛІЗАЦІЯ ===== //
-    $(window).on('load', function () {
-        const hash = window.location.hash;
-
-        if (hash && $(hash).length) {
-            const targetElement = $(hash);
-            const targetOffset = targetElement.offset().top - 70;
-
-            $('html, body').animate({
-                scrollTop: targetOffset
-            }, 600);
-        }
-    });
-
     updateHeaderTop(false);
 });
