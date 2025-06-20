@@ -44,6 +44,10 @@
     }
 }
 
+.hidden {
+    display: none;
+}
+
 .gap {
     &--8 {
         gap: 8px;

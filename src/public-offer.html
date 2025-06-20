@@ -126,8 +126,8 @@
 </header>
 
 <main class="grid gap--32">
-    <section class="offer color--white pl--16 pr--16 pb--48 grid gap--32">
-        <h1 class="offer__title font--primary font--normal font--size-28 text--uppercase">Публічний договір оферти</h1>
+    <section class="offer color--white pl--16 pr--16 pb--48 grid gap--32" aria-labelledby="offerTitle">
+        <h1 id="offerTitle" class="offer__title font--primary font--normal font--size-28 text--uppercase">Публічний договір оферти</h1>
 
         <article class="offer__item grid gap--8">
             <h2 class="offer__subtitle font--primary font--normal font--size-16 text--uppercase">1. Загальні положення</h2>
@@ -169,12 +169,12 @@
 
                 <li class="offer__text-item">4.2. У разі продовження підписки користування Обладнанням автоматично продовжується.</li>
 
-                <li class="offer__text-item">
-                    4.3. Після завершення строку оренди Користувач зобов’язаний:
-                    <br>
-                    -або повернути Обладнання у належному стані;
-                    <br>
-                    -або продовжити підписку на наступний період.
+                <li class="offer__text-item grid gap--8">
+                    <p>4.3. Після завершення строку оренди Користувач зобов’язаний:</p>
+                    <ul class="grid gap--8">
+                        <li>- повернути Обладнання у належному стані;</li>
+                        <li>- продовжити підписку на наступний період.</li>
+                    </ul>
                 </li>
 
                 <li class="offer__text-item">4.4. У разі пошкодження або втрати Обладнання завдаток не повертається, а Користувач компенсує повну вартість.</li>
@@ -195,25 +195,25 @@
             <h2 class="offer__subtitle font--primary font--normal font--size-16 text--uppercase">6. Права та обов’язки сторін</h2>
 
             <ol start="6" class="offer__text font--secondary font--medium font--size-15 grid gap--8">
-                <li class="offer__text-item">
-                    6.1. Виконавець зобов’язується:
-                    <br>
-                    - Надати Користувачу справне Обладнання;
-                    <br>
-                    - Забезпечити доступ до функціоналу чат-бота;
-                    <br>
-                    - Надавати технічну підтримку.
-                    <br>
-                    <br>
-                    Користувач зобов’язується:
-                    <br>
-                    - Використовувати Обладнання згідно з інструкцією;
-                    <br>
-                    - Не передавати третім особам;
-                    <br>
-                    - Вчасно оплачувати підписку;
-                    <br>
-                    - Повернути Обладнання у належному стані.
+                <li class="offer__text-item grid gap--16">
+                    <div class="grid gap--8">
+                        <p>6.1. Виконавець зобов’язується:</p>
+                        <ul class="grid gap--8">
+                            <li>- Надати Користувачу справне Обладнання;</li>
+                            <li>- Забезпечити доступ до функціоналу чат-бота;</li>
+                            <li>- Надавати технічну підтримку.</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid gap--8">
+                        <p>6.2. Користувач зобов’язується:</p>
+                        <ul class="grid gap--8">
+                            <li>- Використовувати Обладнання згідно з інструкцією;</li>
+                            <li>- Не передавати третім особам;</li>
+                            <li>- Вчасно оплачувати підписку;</li>
+                            <li>- Повернути Обладнання у належному стані.</li>
+                        </ul>
+                    </div>
                 </li>
             </ol>
         </article>
@@ -249,32 +249,32 @@
         <section class="offer__cred font--secondary font--medium font--size-15 color--white grid gap--8" aria-labelledby="credentials">
             <h3 id="credentials">Реквізити Виконавця:</h3>
 
-            <dl class="grid gap--8">
-                <div class="flex align--center gap--8">
+            <div class="grid gap--8">
+                <dl class="flex align--center gap--8">
                     <dt>ФОП</dt>
                     <dd>[ПІБ]</dd>
-                </div>
+                </dl>
 
-                <div class="flex align--center gap--8">
+                <dl class="flex align--center gap--8">
                     <dt>ЄДРПОУ:</dt>
                     <dd>[код]</dd>
-                </div>
+                </dl>
 
-                <div class="flex align--center gap--8">
+                <dl class="flex align--center gap--8">
                     <dt>IBAN:</dt>
                     <dd>[номер рахунку]</dd>
-                </div>
+                </dl>
 
-                <div class="flex align--center gap--8">
+                <dl class="flex align--center gap--8">
                     <dt>Email:</dt>
                     <dd>[email]</dd>
-                </div>
+                </dl>
 
-                <div class="flex align--center gap--8">
+                <dl class="flex align--center gap--8">
                     <dt>Телефон:</dt>
                     <dd>[номер]</dd>
-                </div>
-            </dl>
+                </dl>
+            </div>
         </section>
     </section>
 </main>
