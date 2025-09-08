@@ -1,0 +1,96 @@
+.faq {
+    @media (min-width: 768px) {
+        padding: 64px 40px 16px 40px;
+    }
+
+    @media (min-width: 1024px) {
+        &__wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+
+        &__title {
+            @include font(36);
+        }
+
+        &__container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        padding: 80px 120px 32px 120px;
+
+        &__title {
+            @include font(56);
+        }
+
+        &__container {
+            gap: 64px;
+        }
+
+        &__wrapper {
+            gap: 50px;
+        }
+    }
+
+    &__list {
+        &-item {
+            border-radius: 30px;
+            border: 1px solid #484848;
+
+            @media (min-width: 1024px) {
+                cursor: pointer;
+            }
+
+            @media (min-width: 1440px) {
+                padding: 24px;
+            }
+        }
+
+        &-text {
+            color: #B2B2B2;
+        }
+
+        &-icon {
+            transition: transform .4s ease-in-out;
+
+            @media (min-width: 1440px) {
+                height: 14px;
+                width: 14px;
+            }
+
+            &.open {
+                transform: rotate(180deg);
+            }
+
+            &-wrapper {
+                height: 24px;
+                width: 24px;
+
+                @media (min-width: 1440px) {
+                    height: 32px;
+                    width: 32px;
+                }
+            }
+        }
+
+        @media (min-width: 1024px) {
+            width: 50%;
+        }
+
+        @media (min-width: 1440px) {
+            gap: 24px;
+
+            &-title {
+                @include font(18);
+            }
+
+            &-text {
+                @include font(18);
+            }
+        }
+    }
+}

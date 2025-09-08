@@ -1,0 +1,99 @@
+.footer {
+    @media (min-width: 576px) {
+        &__nav {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            &-copyright {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding: 16px 40px 16px 40px;
+
+        &__logo {
+            width: 76px;
+            height: 58px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &__wrapper {
+            padding: 24px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        &__logo {
+            width: 90px;
+            height: 70px;
+        }
+
+        &__nav {
+            &-copyright {
+                &-link {
+                    transition: opacity .4s ease-in-out;
+                    opacity: .8;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &-item {
+                cursor: pointer;
+                transition: .4s ease-in-out;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    background-color: var(--color--black);
+                    border-radius: 4px;
+                    height: 4px;
+                    width: 0;
+                    max-width: 32px;
+                    transition: width .4s ease;
+                    transition-delay: 0s;
+                }
+
+                &:hover {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1440px) {
+        padding: 32px 120px 48px 120px;
+
+        &__logo {
+            width: 109px;
+            height: 78px;
+        }
+
+        &__nav {
+            &-item {
+                &-link {
+                    @include font(20);
+                }
+            }
+
+            &-copyright {
+                &-link {
+                    @include font(18);
+                }
+            }
+        }
+    }
+}

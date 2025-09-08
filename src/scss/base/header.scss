@@ -1,0 +1,217 @@
+.header {
+    z-index: 999;
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    height: 65px;
+    left: 0;
+    right: 0;
+    top: 16px;
+    will-change: backdrop-filter;
+
+    &.float {
+        background-color: #00000096;
+        backdrop-filter: blur(10px);
+    }
+
+    @media (min-width: 768px) {
+        height: 80px;
+
+        &__logo {
+            width: 84px;
+            height: 66px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &.float {
+            background-color: #1717174f;
+            backdrop-filter: blur(20px);
+        }
+    }
+
+    @media (min-width: 1440px) {
+        height: 98px;
+
+        &__logo {
+            width: 108px;
+            height: 85px;
+        }
+    }
+
+    &__burger {
+        width: 100px;
+        margin: 0 auto;
+        height: 100px;
+        padding: 12.5px 0;
+        background-color: transparent;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+        will-change: transform, filter;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        &-wrapper {
+            transform: scale(0.3);
+            position: relative;
+            right: -35px;
+        }
+
+        &-filter {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        &-bar {
+            height: 15px;
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 50px;
+            position: relative;
+            transition: 0.4s all ease;
+
+            &.header__burger-bottom {
+                margin-bottom: 0;
+            }
+        }
+
+        &-head {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            top: 50%;
+            margin-top: -10px;
+            left: 50%;
+            margin-left: -10px;
+            transform: scale(0);
+        }
+
+        &.active {
+            filter: url('#goo');
+
+            .header__burger-head {
+                top: 0;
+                margin-top: 0;
+                transform: scale(1);
+                transition: 0.4s all ease 0.2s;
+            }
+
+            .header__burger-bar {
+                &.header__burger-center {
+                    transform: scale(0);
+                }
+
+                &.header__burger-top {
+                    transform: translateX(0) translateY(30px) rotate(45deg);
+                }
+
+                &.header__burger-bottom {
+                    transform: translateX(0) translateY(-30px) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        z-index: 999;
+        height: inherit;
+        transition: background-color .4s ease;
+
+        &.active {
+            pointer-events: auto;
+        }
+
+        @media (min-width: 768px) {
+            padding: 0 40px;
+        }
+
+        @media (min-width: 1024px) {
+            gap: 40px;
+        }
+
+        @media (min-width: 1440px) {
+            justify-content: start;
+            max-width: 1680px;
+            padding: 0 120px;
+            gap: 148px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+        }
+    }
+
+    &__nav {
+        left: 0;
+        right: 0;
+        padding-bottom: 75px;
+        padding-top: 160px;
+        z-index: 998;
+        top: -16px;
+        transform: translateY(-100vh);
+        transition: transform .6s ease-in-out;
+        pointer-events: none;
+
+        &-links {
+            opacity: 0;
+            transition: opacity .2s ease-in-out;
+            transition-delay: 0s;
+        }
+
+        &.active {
+            transform: translateY(0);
+            pointer-events: auto;
+
+            .header__nav-links {
+                opacity: 1;
+                transition-delay: .6s;
+            }
+        }
+
+        @media (min-width: 768px) {
+            display: none;
+
+            &-desktop {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            &-item {
+                cursor: pointer;
+                transition: .4s ease-in-out;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 2px;
+                    left: 0;
+                    background-color: var(--color--blue);
+                    border-radius: 4px;
+                    height: 5px;
+                    width: 0;
+                    max-width: 32px;
+                    transition: width .4s ease;
+                    transition-delay: 0s;
+                }
+
+                &:hover {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1440px) {
+            &-list {
+                gap: 64px;
+            }
+        }
+    }
+}

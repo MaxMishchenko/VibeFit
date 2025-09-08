@@ -1,0 +1,249 @@
+.price {
+    @media (min-width: 768px) {
+        padding: 64px 40px;
+
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &__title {
+            @include font(36);
+        }
+
+        &__container {
+            max-width: 1130px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        padding: 80px 120px;
+
+        &__title {
+            @include font(56);
+        }
+
+        &__subtitle {
+            @include font(18);
+        }
+
+        &__container {
+            gap: 64px;
+            max-width: 1200px;
+        }
+
+        &__wrapper {
+            gap: 24px;
+        }
+    }
+
+    &__card {
+        border: 1px solid #484848;
+        max-width: 384px;
+        margin: 0 auto;
+
+        &-discount {
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                height: 4px;
+                left: -2px;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(-15deg);
+                width: calc(100% + 6px);
+            }
+        }
+
+        &:nth-of-type(1) .price__card-discount,
+        &:nth-of-type(3) .price__card-discount {
+            &:after {
+                background-color: var(--color--white);
+            }
+        }
+
+        &:nth-of-type(2) .price__card-discount {
+            &:after {
+                background-color: var(--color--black);
+            }
+        }
+
+        &-places {
+            &-counter {
+                height: 32px;
+                width: 32px;
+                border-radius: 50%;
+
+                @media (min-width: 1440px) {
+                    height: 48px;
+                    width: 48px;
+                }
+            }
+        }
+
+        &-wrapper {
+            height: 100%;
+        }
+
+        @media (min-width: 768px) {
+            width: calc(50% - 8px);
+        }
+
+        @media (min-width: 1024px) {
+            width: calc(100% / 3 - 11px);
+
+            &:nth-child(1) {
+                .price__card-text {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        @media (min-width: 1440px) {
+            width: calc(100% / 3 - 16px);
+            gap: 24px;
+            padding: 48px 32px 18px 32px;
+
+            &-places {
+                &-counter {
+                    @include font(18);
+                }
+
+                &-text {
+                    @include font(18);
+                }
+            }
+
+            &-title {
+                @include font(24);
+            }
+
+            &-text {
+                @include font(18);
+            }
+
+            &-price {
+                @include font(56);
+                line-height: 1;
+            }
+
+            &-item {
+                @include font(18);
+            }
+
+            &-list {
+                gap: 8px;
+            }
+
+            &-extra {
+                @include font(18);
+                right: 32px;
+            }
+
+            &-current {
+                @include font(32);
+            }
+
+            &-discount {
+                @include font(24);
+            }
+        }
+
+        &-head {
+            @media (min-width: 1440px) {
+                gap: 24px;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -16px;
+                height: 1px;
+                background-color: var(--color--white);
+            }
+
+            &:nth-child(2) {
+                &:after {
+                    background-color: var(--color--black);
+                }
+            }
+        }
+
+        &-btn {
+            border: 1px solid var(--color--white);
+            height: 42px;
+
+            @media (min-width: 1024px) {
+                transition: all .2s;
+                position: relative;
+                overflow: hidden;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 100%;
+                    transition: width .4s;
+                    z-index: 0;
+                }
+
+                &:hover {
+                    color: var(--color--black);
+
+                    &:before {
+                        width: 100%;
+                    }
+                }
+
+                & > * {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                &-filled {
+                    &::before {
+                        background-color: var(--color--black);
+                    }
+
+                    &:hover {
+                        color: var(--color--white);
+                    }
+                }
+
+                &-clear {
+                    &::before {
+                        background-color: var(--color--white);
+                    }
+                }
+            }
+
+            @media (min-width: 1440px) {
+                height: 52px;
+                @include font(20);
+            }
+        }
+
+        &-icon {
+            &-wrapper {
+                height: 24px;
+                width: 24px;
+            }
+        }
+
+        &-extra {
+            top: 0;
+            right: 24px;
+            border-radius: 0 0 16px 16px;
+        }
+    }
+}

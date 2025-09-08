@@ -1,0 +1,74 @@
+<header id="header" class="header position--fixed">
+    <div id="headerWrapper" class="header__wrapper position--relative flex align--center justify--between pl--16 pr--16">
+        <a tabindex="0" href="/" class="flex" rel="home" aria-label="Головна сторінка">
+            <svg class="header__logo" width="70" height="55" role="img" aria-labelledby="logoTitle logoDesc">
+                <title id="logoTitle">Логотип</title>
+                <desc id="logoDesc">Логотип VibeFit</desc>
+                <use href="#logo"></use>
+            </svg>
+        </a>
+
+        <div class="header__burger-wrapper">
+            <button id="burger" class="header__burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobileMenu">
+                <div class="header__burger-head br--circle"></div>
+                <div class="header__burger-bar header__burger-top"></div>
+                <div class="header__burger-bar header__burger-center"></div>
+                <div class="header__burger-bar header__burger-bottom"></div>
+            </button>
+
+            <svg class="header__burger-filter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="6.8" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                    </filter>
+                    <filter id="goo-no-comp">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="6.8" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+
+        <nav class="header__nav-desktop align--center" hidden aria-label="Меню">
+            <ul class="header__nav-list flex align--center gap--32">
+                <li class="header__nav-item position--relative pt--12 pb--12">
+                    <a href="#sectionInfo" class="font--secondary font--bold font--size-20 color--white">Як це працює?</a>
+                </li>
+
+                <li class="header__nav-item position--relative pt--12 pb--12">
+                    <a href="#sectionAudience" class="font--secondary font--bold font--size-20 color--white">Для кого</a>
+                </li>
+
+                <li class="header__nav-item position--relative pt--12 pb--12">
+                    <a href="#sectionFAQ" class="font--secondary font--bold font--size-20 color--white">FAQ</a>
+                </li>
+
+                <li class="header__nav-item position--relative pt--12 pb--12">
+                    <a href="#sectionPrice" class="font--secondary font--bold font--size-20 color--white">Тарифи</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <nav id="mobileMenu" class="header__nav position--absolute bg--grey" aria-label="Меню">
+        <ul class="header__nav-links flex flex--column align--center gap--32">
+            <li>
+                <a href="#sectionInfo" class="font--primary font--size-28 color--white text--uppercase">Як це працює?</a>
+            </li>
+
+            <li>
+                <a href="#sectionAudience" class="font--primary font--size-28 color--white text--uppercase">Для кого</a>
+            </li>
+
+            <li>
+                <a href="#sectionFAQ" class="font--primary font--size-28 color--white text--uppercase">FAQ</a>
+            </li>
+
+            <li>
+                <a href="#sectionPrice" class="font--primary font--size-28 color--white text--uppercase">Тарифи</a>
+            </li>
+        </ul>
+    </nav>
+</header>
